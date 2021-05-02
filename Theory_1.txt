@@ -1,0 +1,11 @@
+1) copy crypto-config.yaml from fabric samples
+Command to generate cryprto material (orderers, orgs, peers, certificates etc)
+./cryptogen generate --config=./crypto-config.yaml
+
+2) copy configtx.yaml from fabric samples
+
+Genesis Block is a first Block. It defines the network
+It has all the public keys of entities and configuration.
+What is MSP? Membership Service Provider https://hyperledger-fabric.readthedocs.io/en/release-2.2/msp.html
+
+Anchor Peers - cross org communication
