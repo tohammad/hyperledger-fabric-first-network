@@ -1,11 +1,25 @@
 1) copy crypto-config.yaml from fabric samples
-Command to generate cryprto material (orderers, orgs, peers, certificates etc)
+Command to generate crypto material (orderers, orgs, peers, certificates etc)
 ./cryptogen generate --config=./crypto-config.yaml
 
 2) copy configtx.yaml from fabric samples
+Command to generate genesis Block
+./configtxgen -profile TwoOrgsOrdererGenesis -outputBlock ./channel/genesis.block
+
 
 Genesis Block is a first Block. It defines the network
 It has all the public keys of entities and configuration.
+We use genesis block to initialize the . In the absense of gensis block the ordering service cannot start.
+
+3) Create a channel
+Command to generate genesis Block
+./configtxgen -profile TwoOrgsChannel -outputCreateChannelTx ./channel/channel.tx -channelID testchannel
+Peer can join this channel later on. and can communicate with other peers on this channel
+
 What is MSP? Membership Service Provider https://hyperledger-fabric.readthedocs.io/en/release-2.2/msp.html
 
 Anchor Peers - cross org communication
+
+Consortium : https://hyperledger-fabric.readthedocs.io/en/release-1.2/network/network.html#defining-a-consortium
+
+4) copy docker compose and base folder from samples
